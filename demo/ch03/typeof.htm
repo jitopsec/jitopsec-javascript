@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    
+    	<script type="text/javascript">
+	var variable; //value : undefined
+	alert(typeof variable);
+	alert(typeof(typeof variable));
+
+	var message = "2012"; //value : "2012"
+	alert(typeof message);
+	alert(typeof(typeof message));
+
+	var isExist = true;
+	var type = (typeof isExist);
+	alert(type);
+	alert(typeof type);
+
+	var number = 2012;
+	var type = typeof number;
+	alert(type);
+	alert(typeof type);
+
+	var nall = null;
+	var type = typeof nall;
+	alert(type);
+	alert(typeof type);
+
+	var instance = new Object();
+	var type = typeof instance;
+	alert(type);
+	alert(typeof type);
+
+	function method(){
+		//do nothing;
+	}
+	var type = typeof method;
+	alert(type);
+	alert(typeof type);
+
+	var info;
+	alert("已声明，未初始化："+(typeof info));//已声明，未初始化
+	alert("未声明："+(typeof age)); //未声明
+	</script>
+    </body>
+</html>
