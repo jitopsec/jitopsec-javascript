@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+    	var list = [1,2,3,4,5,6,7,8];
+	alert("list.length="+list.length);
+	list[list.length] = 9;
+	list[list.length] =10;
+	alert("list.length="+list.length);
+	list[12] = 99;
+	alert("list.length="+list.length);
+
+	var obj = {name:"test"};
+
+	alert("localeString::"+obj.toLocaleString());
+	alert("toString::"+obj.toString());
+	alert("valueOf::"+obj.valueOf());
+
+	alert("localeString::"+list.toLocaleString());
+	alert("toString::"+list.toString());
+	alert("valueOf::"+list.valueOf());
+
+	var person1 = {
+		toString:function(){
+			return "Nikolas";
+		},
+		toLocaleString:function(){
+			return "nikolas";
+		},
+		valueOf:function(){
+			return "1";
+		}
+	};
+
+	var person2 = {
+		toString : function(){
+			return "Douglas";
+		},
+		toLocaleString:function(){
+			return "douglas";
+		},
+		valueOf :function(){
+			return "2";
+		}
+	};
+
+	var array = [person1,person2];
+	alert(array);
+	alert(array.toString());
+	alert(array.toLocaleString());
+        alert(array.valueOf());
+        
+	var values = array.join("/");
+	alert(values);
+
+	var stack = [];
+	var count = stack.push("one","two","three","four");
+	alert(count);
+	count = stack.push("five");
+	alert(count);
+
+	var element = stack.pop();
+	alert(element);
+	alert("current length::"+stack.length);
+        
+	var queue = new Array();
+	count = queue.push("red","green","blue");
+	alert(count);
+	var item = queue.shift();
+	alert(item);
+
+
+
+        //push() add array.item to array[array.length];
+	//pop() get array[array.length-1];
+	//shife() get array[0];
+
+	var queue2 = [];
+	item = queue2.shift();
+	alert(item);
+
+        var car = {
+		name:'volvo',
+		wheels:[1,2,3,4]
+	};
+	alert(car.name+" "+car.wheels);
+
+	var arrayList = [];
+	arrayList.name = "ArrayList";
+	alert(arrayList.name);
+	</script>
+    </body>
+</html>
