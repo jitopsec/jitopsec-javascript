@@ -5,6 +5,7 @@
     </head>
     <body>
     	<script type="text/javascript">
+	function test (){
 		//var regExp = /[^abc]/gi;
 		//var regExp = /[a-c]/gi;
 		//var regExp = /\s/gi;
@@ -18,6 +19,58 @@
 		alert("regExp.global::"+regExp.global);
 		alert("regExp.ignoreCase::"+regExp.ignoreCase);
 		alert("regExp.source::"+regExp.source);
+	}
+
+	function display(regExp,result,info){
+	
+		var value ="RegExp Info"
+		           +"\n"
+			   +"RegExp.source="+regExp.source+"|"
+			   +"\n"
+			   +"regExp.test.info="+info
+			   +"\n"
+			   +"regExp.result="+result;
+		return value;
+	}
+
+	function word(info){
+
+		var regExp = new RegExp("\w","g");
+		
+		var result = regExp.test(info);
+
+		alert("RegExp Info"
+			+"\n"
+			+"RegExp.source="+regExp.source+"|"
+			+"\n"
+			+"regExp.test.info="+info
+			+"\n"
+			+"regExp.result="+result);
+	}
+	//word("weoroiusodf298798749 918472987");
+	//word("====---''''''");
+
+	function digits(info){
+		var regExp = /^\d\d/g;
+		alert(display(regExp,regExp.test(info),info));
+
+	}
+	function digitsExec(info){
+		var regExp = /\d/g;
+		info = new String(info);
+		var list = [];
+		do{
+			var array = regExp.exec(info);
+			if(array != null && array.length>0){
+				list[list.length] = array[0];
+			}
+			info = info.substring(regExp.lastIndex);
+		}while(regExp.test(info));
+	//	alert(array.length+" "+array.index+" "+array.input);
+		return list;
+	}
+
+         alert(digitsExec("x98xiu"));
 	</script>
     </body>
 </html>
