@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type = "text/javascript">
+		var value = (function(x){return x*x;})(10);
+		alert(value);
+		
+		function isArray(a){
+		
+			if(a instanceof Array
+				|| (a && typeof a=="object" && "length" in a)){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
+		function add(x,y){return x+y;}
+		function subtract(x,y){return x-y;}
+		function multiply(x,y){return x*y;}
+		function divide(x,y){return x/y;}
+
+		function operate(operator,operand1,operand2){
+			return operator(operand1,operand2);
+		}
+
+		var value = operate(add,operate(multiply,2,3),operate(divide,4,2));
+		alert(value);
+
+		var operators = {
+			"add":add,
+			"subtract":subtract,
+			"multiply":multiply,
+			"divide":divide
+		};
+
+		function operate2(opName,operand1,operand2){
+			if(typeof operators[opName] == "function"){
+				return operators[opName](operand1,operand2);
+			}else{
+				throw new Error("unKnown operator");
+			}
+		}
+		var value = operate2("add",operate(multiply,2,4),operate(divide,4,2));
+		alert(value);
+
+		alert("function length::"+add.length);
+
+		function check(args){
+			var actul =  args.length;
+
+			var expected = args.callee.length;
+
+			if(expected != actul){
+				throw new Error("Wrong number of arguments.");
+			}
+
+		}
+		
+		//static variable
+		uniqueInteger.count = 0;
+	        function uniqueInteger(){
+			return arguments.callee.count++;
+		}
+		for(var i=0;i<10;i++){
+			alert(uniqueInteger());
+		}
+		alert(uniqueInteger.count);
+		uniqueInteger.uuid= "uuid";
+                
+		var person = {
+			id:uniqueInteger(),
+			title:uniqueInteger.uuid,
+			name:"sufan"
+		}
+		alert(person.id+" "+person.name+" "+person.title);
+
+
+
+	</script>
+    </body>
+</html>
