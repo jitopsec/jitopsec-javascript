@@ -6,7 +6,12 @@
     <body>
     	<script type="text/javascript">
 		function makefunction(x){
-			return function(i){return x+i};
+
+			var person = {name:"test",age:12};
+
+			with(person){
+				return function(i){return x+i+age};
+			}
 		}
                 
 		var from10 = makefunction(10);

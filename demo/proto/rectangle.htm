@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+		function Rectangle(x,y){
+			this.width = x;
+			this.height = y;
+			this.area = function(){
+				return this.width*this.height;
+			}
+		}
+		var rect = new Rectangle(3,4);
+		alert(rect.area());
+
+		alert(typeof Rectangle.prototype);
+
+		function test(){
+		}
+
+		alert(typeof test.prototype);
+
+		alert(rect.__proto__ === Rectangle.prototype)
+	</script>
+    </body>
+</html>
