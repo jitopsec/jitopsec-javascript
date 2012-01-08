@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+		function makefunction(x){
+			return function(){return x};
+		}
+
+		var array = [makefunction(0),makefunction(1),makefunction(2),makefunction(3)];
+
+		for(var i=0,length=array.length;i<length;i++){
+			alert(array[i]());
+		}
+
+		uniqueID = (function(){
+			var id = 0;
+			
+			return function(){return id++;};
+		}
+		)();
+
+		alert(uniqueID());
+		alert(uniqueID());
+		alert(uniqueID());
+		alert(uniqueID());
+	</script>
+    </body>
+</html>
