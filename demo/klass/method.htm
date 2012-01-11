@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+                var age = 0;
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+                var fn = function(){
+		
+			//alert("name::"+this.name+" age::"+this.age);
+			alert("name::"+name+" age::"+age);
+		}
+		Person.prototype.print = fn;
+
+		var person = new Person("wangtong",32);
+		person.print();
+
+		Person.prototype.print();
+
+		fn();
+	</script>
+    </body>
+</html>

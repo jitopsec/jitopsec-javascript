@@ -8,6 +8,9 @@
 
 		var person = new Object();
 
+		person.name = "";
+		person.value = "";
+
 		alert(person.constructor === Object);
 
 		var method = function(){
@@ -16,6 +19,10 @@
 		//alert("prototype" in method); //return true;
 
 		alert(method.prototype.constructor == method); //return true;
+                var name;
+		for(name in person){
+			alert(name);
+		}
 
 
 	</script>

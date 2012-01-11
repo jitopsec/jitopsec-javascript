@@ -5,12 +5,13 @@
     </head>
     <body>
     	<script type="text/javascript">
-		String.prototype.trim=function(){
-			alert(this.length);
+		String.prototype.endsWith=function(c){
+			return (c == this.charAt(this.length-1));	
 		}
 
-		var str = new String("info");
-		str.trim();
+		var str = new String('info');
+		var result = str.endsWith("o");
+		alert(result);
 	</script>
     </body>
 </html>
