@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+		var x = "global";
+		function fn(){
+			var x = "outer function";
+			function inFn(){
+				//var x = "inner function";
+				alert(x);
+				alert(typeof inFn);
+			}
+			inFn();
+		}
+		fn();
+
+		function method(){
+			alert((typeof method)+" "+(method instanceof Function));
+		}
+		method();
+	</script>
+    </body>
+</html>

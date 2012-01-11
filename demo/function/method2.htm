@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+		
+		function outter(){
+			var share = "inner share";
+			var list = new Array();
+
+			list.push(function(str){
+				alert("call fucntion before:"+share);
+				share = str;
+				alert("call function after:"+share);
+			});
+
+			list.push(function(str){
+				alert("call function before:"+share);
+				share = str;
+				alert("call function after:"+share);
+			});
+
+			return list;
+		}
+
+		var fns = outter();
+
+	        var method1 = fns[0];
+		var method2 = fns[1];
+
+		method1("method1");
+		method2("method2");
+	</script>
+    </body>
+</html>
