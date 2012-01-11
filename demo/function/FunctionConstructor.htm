@@ -6,18 +6,16 @@
     <body>
     	<script type="text/javascript">
 
-		var person = new Object();
+		var y = "global";
+		function constructFunction(){
+		
+			var y = "local";
+			//return new Function("return y"); //"global"
+			return function(){return y;}; //"local"
+		}
 
-		alert(person.constructor === Object);
-
-		var method = function(){
-		};
-
-		//alert("prototype" in method); //return true;
-
-		alert(method.prototype.constructor == method); //return true;
-
-
+		var method = constructFunction();
+		alert(method());
 	</script>
     </body>
 </html>
