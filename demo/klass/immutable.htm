@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+
+		function ImmutableRectangle(x,y){
+			
+			this.getWidth = function(){ return x;};
+			this.getHight = function(){ return y;};
+		}
+
+		ImmutableRectangle.prototype.area = function(){
+			return this.getWidth()*this.getHight();
+		}
+
+		var imm = new ImmutableRectangle(10,10);
+		var value = imm.area();
+		alert(value);
+	</script>
+    </body>
+</html>
