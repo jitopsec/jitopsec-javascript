@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Blank Page for Rich Text Editing</title>
+    </head>
+    <body>
+    	<script type="text/javascript">
+		function Rectangle(width,hight){
+			this.width = width;
+			this.hight = hight;
+		}
+
+		Rectangle.prototype.area = function(){
+			return this.width * this.hight;
+		}
+
+		function PositionedRectangle(w,h,x,y){
+			Rectangle.call(this,w,h);
+			this.x = x;
+			this.y = y;
+		}
+
+		PositionedRectangle.prototype = new Rectangle();
+		delete PositionedRectangle.prototype.width;
+		delete PositionedRectangle.prototype.hight;
+
+		PositionedRectangle.prototype.constructor = PositionRectangle;
+	</script>
+    </body>
+</html>
